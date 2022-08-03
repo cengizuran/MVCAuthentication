@@ -1,0 +1,27 @@
+﻿@model HomeVM
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2 style="color:red">@ViewBag.Message</h2>
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel panel-body">
+            @using (Html.BeginForm())
+            {
+                <div>
+                    @Html.TextBoxFor(x=> x.AppUser.UserName, new {placeholder = "Username", @class="form-control"})
+                </div>
+                <br />
+                <div>
+                    @Html.TextBoxFor(x=> x.AppUser.Password, new {placeholder="Password", @class="form-control"})
+                </div>
+                <br />
+                <button class="btn btn-primary">
+                    Login
+                </button>
+            }
+        </div>
+    </div>
+</div>
